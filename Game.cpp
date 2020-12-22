@@ -38,6 +38,15 @@ Game::Game(QWidget *parent){
     tuk->setFlag(QGraphicsItem::ItemIsFocusable);
     tuk->setFocus();
 
+    //create score
+    score = new Score();
+    scene->addItem(score);
+
+    //create horns
+    horncount = new HornCount();
+    horncount->setPos(x(),y()+25);
+    scene->addItem(horncount);
+
     //spwan vehicles
 
     QTimer * timer = new QTimer();

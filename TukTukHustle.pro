@@ -11,6 +11,8 @@ CONFIG += c++11
 SOURCES += \
     Game.cpp \
     Horn.cpp \
+    HornCount.cpp \
+    Score.cpp \
     Tuk.cpp \
     Vehicle.cpp \
     main.cpp
@@ -18,6 +20,8 @@ SOURCES += \
 HEADERS += \
     Game.h \
     Horn.h \
+    HornCount.h \
+    Score.h \
     Tuk.h \
     Vehicle.h
 

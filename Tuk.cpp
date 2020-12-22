@@ -16,7 +16,7 @@ Tuk::Tuk(QGraphicsItem *parent): QGraphicsRectItem(parent){
 void Tuk::keyPressEvent(QKeyEvent *event){
 
     //move tuk with Arrow Keys
-    if (event->key() == Qt::Key_Up){
+    if (event->key() == Qt::Key_W){
         if(pos().y()>0) //avoids tuk moving out of the scence
         setPos(x(),y()-10);
 
@@ -24,16 +24,16 @@ void Tuk::keyPressEvent(QKeyEvent *event){
 
     }
 
-    else if (event->key() == Qt::Key_Down){
+    else if (event->key() == Qt::Key_S){
         if(pos().y()+100<600) //avoids tuk moving out of the scence
         setPos(x(),y()+10);
     }
 
-    else if (event->key() == Qt::Key_Left){
+    else if (event->key() == Qt::Key_A){
         if(pos().x()>0) //avoids tuk moving out of the scence
         setPos(x()-10,y());
     }
-    else if (event->key() == Qt::Key_Right){
+    else if (event->key() == Qt::Key_D){
         if(pos().x()+100<800) //avoids tuk moving out of the scence
         setPos(x()+10,y());
     }

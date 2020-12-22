@@ -3,9 +3,10 @@
 
 #include <QGraphicsRectItem>
 #include <QGraphicsItem>
+
 #include <QObject>
 
-class Horn: public QObject, public QGraphicsRectItem{
+class Horn: public QObject, public QGraphicsRectItem {
     Q_OBJECT
 public:
     Horn(QGraphicsItem * parent=0);

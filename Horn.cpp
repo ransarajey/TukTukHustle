@@ -7,12 +7,16 @@
 #include <Game.h>
 #include <Vehicle.h>
 
-
+extern Game * game;
 
 Horn::Horn(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
 
     //create horn
-    setRect(0,0,50,100);
+   if(game->horncount->getHorns()>0) {
+    setRect(0,0,50,100);}
+
+    //decrease horn
+    game->horncount->decreaseHorns();
 
     //making a timer to move the horn forward with time
     QTimer * timer = new QTimer(this);

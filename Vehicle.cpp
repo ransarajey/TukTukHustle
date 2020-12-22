@@ -7,6 +7,7 @@
 #include <Horn.h>
 #include <Game.h>
 
+extern Game * game;
 
 Vehicle::Vehicle(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
 
@@ -14,7 +15,7 @@ Vehicle::Vehicle(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
     setRect(0,0,100,100);
 
     //set random position
-    int randomNo = rand() % 2 ? 100: 400;
+    int randomNo = rand() % 2 ? 200: 300;
 
     setPos(800,randomNo);
 
@@ -40,6 +41,9 @@ void Vehicle::moveVehicle()
 
         scene()->removeItem(this);
         delete this;
+
+        //increase score
+        game->score->increaseScore();
 
 
     }

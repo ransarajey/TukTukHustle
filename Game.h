@@ -4,8 +4,10 @@
 
 #include <QGraphicsView>
 #include <QWidget>
-
+#include <QGraphicsScene>
 #include <Tuk.h>
+#include <Score.h>
+#include <HornCount.h>
 
 
 class Game: public QGraphicsView{
@@ -14,6 +16,8 @@ public:
 
      QGraphicsScene * scene;
      Tuk * tuk;
+     Score * score;
+     HornCount * horncount;
 
 
 
