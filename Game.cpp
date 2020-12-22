@@ -32,7 +32,7 @@ Game::Game(QWidget *parent){
 //    tuk->setRect(0,0,100,100);
 
     //set tuk pos
-    tuk->setPos(10,130);
+    tuk->setPos(10,245);
 
     //add tuk to the scene
     scene->addItem(tuk);
@@ -47,7 +47,7 @@ Game::Game(QWidget *parent){
 
     //create horns count
     horncount = new HornCount();
-    horncount->setPos(x(),y()+25);
+    horncount->setPos(x(),y()+35);
     scene->addItem(horncount);
 
     //spwan vehicles

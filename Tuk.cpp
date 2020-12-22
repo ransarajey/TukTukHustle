@@ -25,7 +25,7 @@ void Tuk::keyPressEvent(QKeyEvent *event){
     //move tuk with Arrow Keys
     if (event->key() == Qt::Key_W){
         if(pos().y()>0) //avoids tuk moving out of the scence
-        setPos(x(),y()-240);
+        setPos(x(),y()-180);
 
 
 
@@ -33,7 +33,7 @@ void Tuk::keyPressEvent(QKeyEvent *event){
 
     else if (event->key() == Qt::Key_S){
         if(pos().y()+100<600) //avoids tuk moving out of the scence
-        setPos(x(),y()+240);
+        setPos(x(),y()+180);
     }
 
     else if (event->key() == Qt::Key_A){

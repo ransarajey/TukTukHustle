@@ -24,7 +24,7 @@ Vehicle::Vehicle(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
     //set random position
-    int randomNo = rand() % 2 ? 70: 310;
+    int randomNo = rand() % 2 ? 160: 360;
 
     setPos(800,randomNo);
 

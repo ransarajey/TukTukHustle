@@ -11,7 +11,7 @@ HornCount::HornCount(QGraphicsItem *parent): QGraphicsTextItem(parent) {
     //draw text
     setPlainText(QString("Horns: ") + QString::number(horns)); //Horns: 3
     setDefaultTextColor(Qt::red);
-    setFont(QFont("times",16));
+    setFont(QFont("Roboto",20));
 }
 
 void HornCount::decreaseHorns()

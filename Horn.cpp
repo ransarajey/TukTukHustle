@@ -41,9 +41,9 @@ void Horn::moveHorn(){
             int randomNo = rand() % 2 ? 110: -110;
 
             //move the vehicle
-            if(heardHorn[i]->pos().y() < 150){
-            heardHorn[i]->setPos(x(),y()+200);}
-            else  {heardHorn[i]->setPos(x(),y()-300);}
+            if(heardHorn[i]->pos().y() < 170){
+            heardHorn[i]->setPos(x(),y()+100);}
+            else  {heardHorn[i]->setPos(x(),y()-245);}
 
 
         }
