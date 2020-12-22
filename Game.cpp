@@ -2,6 +2,7 @@
 
 #include <Game.h>
 #include <Vehicle.h>
+#include <QImage>
 
 
 
@@ -13,6 +14,7 @@ Game::Game(QWidget *parent){
 
     //set scene size
     scene->setSceneRect(0,0,800,600);
+    setBackgroundBrush(QBrush(QImage(":/img/img/bg.png")));
 
     //set created scene as current scene
     setScene(scene);
@@ -26,10 +28,10 @@ Game::Game(QWidget *parent){
     tuk = new Tuk();
 
     //set tuk size
-    tuk->setRect(0,0,100,100);
+//    tuk->setRect(0,0,100,100);
 
     //set tuk pos
-    tuk->setPos(10,200);
+    tuk->setPos(10,130);
 
     //add tuk to the scene
     scene->addItem(tuk);
@@ -42,7 +44,7 @@ Game::Game(QWidget *parent){
     score = new Score();
     scene->addItem(score);
 
-    //create horns
+    //create horns count
     horncount = new HornCount();
     horncount->setPos(x(),y()+25);
     scene->addItem(horncount);
@@ -51,7 +53,7 @@ Game::Game(QWidget *parent){
 
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),tuk,SLOT(spawnVehicles()));
-    timer->start(2000);
+    timer->start(5000);
 
     //increase score
     score->increaseScore();

@@ -1,11 +1,11 @@
 #ifndef TUK_H
 #define TUK_H
 
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QObject>
 #include <QGraphicsItem>
 
-class Tuk:public QObject, public QGraphicsRectItem{
+class Tuk:public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
     Tuk(QGraphicsItem * parent=0);

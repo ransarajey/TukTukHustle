@@ -9,11 +9,14 @@
 
 extern Game * game;
 
-Horn::Horn(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
+Horn::Horn(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
     //create horn
    if(game->horncount->getHorns()>0) {
-    setRect(0,0,50,100);}
+//    setRect(0,0,50,100);
+       setPixmap(QPixmap(":/img/img/horn.png"));
+
+   }
 
     //decrease horn
     game->horncount->decreaseHorns();
@@ -38,7 +41,9 @@ void Horn::moveHorn(){
             int randomNo = rand() % 2 ? 110: -110;
 
             //move the vehicle
-            heardHorn[i]->setPos(x(),y()+randomNo);
+            if(heardHorn[i]->pos().y() < 150){
+            heardHorn[i]->setPos(x(),y()+200);}
+            else  {heardHorn[i]->setPos(x(),y()-300);}
 
 
         }
@@ -50,7 +55,7 @@ void Horn::moveHorn(){
     setPos(x()+10,y());
 
     //destroy and delete horn if goes out of the scene
-    if (pos().x() - rect().width() > 800){
+    if (pos().x() - 100 > 800){
         scene()->removeItem(this);
         delete this;
 

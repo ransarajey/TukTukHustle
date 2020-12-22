@@ -1,6 +1,7 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 
+
 #include <Tuk.h>
 #include <Horn.h>
 #include <Vehicle.h>
@@ -11,7 +12,10 @@
 
 extern Game * game;
 
-Tuk::Tuk(QGraphicsItem *parent): QGraphicsRectItem(parent){
+Tuk::Tuk(QGraphicsItem *parent): QGraphicsPixmapItem(parent){
+
+    setPixmap(QPixmap(":/img/img/tuk.png"));
+
 
 }
 
@@ -21,7 +25,7 @@ void Tuk::keyPressEvent(QKeyEvent *event){
     //move tuk with Arrow Keys
     if (event->key() == Qt::Key_W){
         if(pos().y()>0) //avoids tuk moving out of the scence
-        setPos(x(),y()-10);
+        setPos(x(),y()-240);
 
 
 
@@ -29,7 +33,7 @@ void Tuk::keyPressEvent(QKeyEvent *event){
 
     else if (event->key() == Qt::Key_S){
         if(pos().y()+100<600) //avoids tuk moving out of the scence
-        setPos(x(),y()+10);
+        setPos(x(),y()+240);
     }
 
     else if (event->key() == Qt::Key_A){
@@ -47,7 +51,7 @@ void Tuk::keyPressEvent(QKeyEvent *event){
     else if(event->key() == Qt::Key_Space){
         //create a horn
         Horn * horn = new Horn();
-        horn->setPos(x(),y());
+        horn->setPos(x()+80,y());
         scene()->addItem(horn);
     }
 
