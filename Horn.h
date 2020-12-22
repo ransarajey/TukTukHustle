@@ -10,7 +10,7 @@ class Horn: public QObject, public QGraphicsRectItem{
 public:
     Horn(QGraphicsItem * parent=0);
 public slots:
-    void move();
+    void moveHorn();
 };
 
 #endif // HORN_H

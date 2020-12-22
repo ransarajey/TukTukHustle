@@ -3,6 +3,7 @@
 
 #include <Tuk.h>
 #include <Horn.h>
+#include <Vehicle.h>
 
 
 
@@ -28,6 +29,15 @@ void Tuk::keyPressEvent(QKeyEvent *event){
         setPos(x(),y()+10);
     }
 
+    else if (event->key() == Qt::Key_Left){
+        if(pos().x()>0) //avoids tuk moving out of the scence
+        setPos(x()-10,y());
+    }
+    else if (event->key() == Qt::Key_Right){
+        if(pos().x()+100<1080) //avoids tuk moving out of the scence
+        setPos(x()+10,y());
+    }
+
 
     //honk with spacebar
 
@@ -37,4 +47,14 @@ void Tuk::keyPressEvent(QKeyEvent *event){
         horn->setPos(x(),y());
         scene()->addItem(horn);
     }
+
+
+    //spawn vehicles
+}
+
+void Tuk::spawnVehicles()
+{
+    //create a vehicle
+    Vehicle * vehicle = new Vehicle();
+    scene()->addItem(vehicle);
 }

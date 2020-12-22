@@ -11,13 +11,13 @@ Horn::Horn(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
 
     //making a timer to move the horn forward with time
     QTimer * timer = new QTimer(this);
-    connect(timer,SIGNAL(timeout()),this,SLOT(move()));
+    connect(timer,SIGNAL(timeout()),this,SLOT(moveHorn()));
 
     // start the timer
     timer->start(50);
 }
 
-void Horn::move()
+void Horn::moveHorn()
 {
     setPos(x()+10,y());
 }

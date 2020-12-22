@@ -1,4 +1,9 @@
+#include <QTimer>
+
 #include <Game.h>
+#include <Vehicle.h>
+
+
 
 
 Game::Game(QWidget *parent){
@@ -33,6 +38,13 @@ Game::Game(QWidget *parent){
     tuk->setFlag(QGraphicsItem::ItemIsFocusable);
     tuk->setFocus();
 
+    //spwan vehicles
+
+    QTimer * timer = new QTimer();
+    QObject::connect(timer,SIGNAL(timeout()),tuk,SLOT(spawnVehicles()));
+    timer->start(2000);
+
+    show();
 
 
 

@@ -12,12 +12,14 @@ SOURCES += \
     Game.cpp \
     Horn.cpp \
     Tuk.cpp \
+    Vehicle.cpp \
     main.cpp
 
 HEADERS += \
     Game.h \
     Horn.h \
-    Tuk.h
+    Tuk.h \
+    Vehicle.h
 
 FORMS +=
 
