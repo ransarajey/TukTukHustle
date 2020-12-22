@@ -12,7 +12,7 @@ Game::Game(QWidget *parent){
     scene = new QGraphicsScene();
 
     //set scene size
-    scene->setSceneRect(0,0,1080,720);
+    scene->setSceneRect(0,0,800,600);
 
     //set created scene as current scene
     setScene(scene);
@@ -20,7 +20,7 @@ Game::Game(QWidget *parent){
     //removing scroll bars
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setFixedSize(1080,720);
+    setFixedSize(800,600);
 
    //create the tuk
     tuk = new Tuk();

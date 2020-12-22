@@ -11,8 +11,9 @@ Vehicle::Vehicle(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
     setRect(0,0,100,100);
 
     //set random position
-    int randomNo = rand() % 500;
-    setPos(1080,randomNo);
+    int randomNo = rand() % 3 ? 100: 400;
+
+    setPos(800,randomNo);
 
     //move the vehicle with time
     QTimer * timer = new QTimer(this);

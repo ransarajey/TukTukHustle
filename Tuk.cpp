@@ -25,7 +25,7 @@ void Tuk::keyPressEvent(QKeyEvent *event){
     }
 
     else if (event->key() == Qt::Key_Down){
-        if(pos().y()+100<720) //avoids tuk moving out of the scence
+        if(pos().y()+100<600) //avoids tuk moving out of the scence
         setPos(x(),y()+10);
     }
 
@@ -34,7 +34,7 @@ void Tuk::keyPressEvent(QKeyEvent *event){
         setPos(x()-10,y());
     }
     else if (event->key() == Qt::Key_Right){
-        if(pos().x()+100<1080) //avoids tuk moving out of the scence
+        if(pos().x()+100<800) //avoids tuk moving out of the scence
         setPos(x()+10,y());
     }
 
