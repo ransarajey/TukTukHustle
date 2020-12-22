@@ -34,4 +34,8 @@ Game::Game(QWidget *parent){
     tuk->setFocus();
 
 
+
+
+
+
 };

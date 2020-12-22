@@ -1,7 +1,11 @@
-#include <Tuk.h>
 #include <QKeyEvent>
+#include <QGraphicsScene>
 
-#include <QDebug>
+#include <Tuk.h>
+#include <Horn.h>
+
+
+
 
 Tuk::Tuk(QGraphicsItem *parent): QGraphicsRectItem(parent){
 
@@ -12,18 +16,25 @@ void Tuk::keyPressEvent(QKeyEvent *event){
 
     //move tuk with Arrow Keys
     if (event->key() == Qt::Key_Up){
-        if(pos().y()>0)
+        if(pos().y()>0) //avoids tuk moving out of the scence
         setPos(x(),y()-10);
 
-        //qDebug() << pos().y()-10;
+
 
     }
 
-    if (event->key() == Qt::Key_Down){
-        if(pos().y()+100<720)
+    else if (event->key() == Qt::Key_Down){
+        if(pos().y()+100<720) //avoids tuk moving out of the scence
         setPos(x(),y()+10);
-
-        qDebug() << pos().y()+100;
     }
 
+
+    //honk with spacebar
+
+    else if(event->key() == Qt::Key_Space){
+        //create a horn
+        Horn * horn = new Horn();
+        horn->setPos(x(),y());
+        scene()->addItem(horn);
+    }
 }
