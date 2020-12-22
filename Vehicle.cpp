@@ -7,6 +7,8 @@
 #include <Horn.h>
 #include <Game.h>
 
+#include <QDebug>
+
 extern Game * game;
 
 Vehicle::Vehicle(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
@@ -38,6 +40,27 @@ Vehicle::Vehicle(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 void Vehicle::moveVehicle()
 {
+
+
+
+    //getting a list of vehicles collided with the tuk
+    QList<QGraphicsItem *> collidedCars = collidingItems();
+
+    //if a vehicle crashed with the tuk gameOver
+    for (int i=0, n=collidedCars.size(); i<n; i++){
+        if (typeid(*(collidedCars[i])) == typeid(Tuk)){
+            game->gameOver();
+        }
+        }
+
+    //if a vehicle crashed with a vehicle destroy
+    for (int i=0, n=collidedCars.size(); i<n; i++){
+        if (typeid(*(collidedCars[i])) == typeid(Vehicle)){
+            scene()->removeItem(collidedCars[i]);
+            delete collidedCars[i];
+
+        }
+        }
 
 
     //move the vehicles towards tuk

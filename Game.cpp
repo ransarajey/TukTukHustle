@@ -5,12 +5,11 @@
 #include <QImage>
 
 
-
-
 Game::Game(QWidget *parent){
 
     //creating a scene
     scene = new QGraphicsScene();
+
 
     //set scene size
     scene->setSceneRect(0,0,800,600);
@@ -18,6 +17,8 @@ Game::Game(QWidget *parent){
 
     //set created scene as current scene
     setScene(scene);
+
+
 
     //removing scroll bars
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -61,6 +62,17 @@ Game::Game(QWidget *parent){
     show();
 
 
+
+
+
+}
+
+void Game::gameOver()
+{
+    scenetwo = new QGraphicsScene();
+    scenetwo->setSceneRect(0,0,800,600);
+    setBackgroundBrush(QBrush(QImage(":/img/img/bg2.png")));
+    setScene(scenetwo);
 
 
 

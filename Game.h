@@ -13,8 +13,10 @@
 class Game: public QGraphicsView{
 public:
     Game(QWidget * parent=0);
+    void gameOver();
 
      QGraphicsScene * scene;
+     QGraphicsScene * scenetwo;
      Tuk * tuk;
      Score * score;
      HornCount * horncount;

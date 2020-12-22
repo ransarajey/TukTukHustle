@@ -10,6 +10,7 @@ class Tuk:public QObject, public QGraphicsPixmapItem{
 public:
     Tuk(QGraphicsItem * parent=0);
     void keyPressEvent(QKeyEvent * event);
+
 public slots:
     void spawnVehicles();
 };
