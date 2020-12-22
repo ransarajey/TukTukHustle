@@ -4,6 +4,7 @@
 #include <Game.h>
 
 
+
 Horn::Horn(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
 
     //create horn
@@ -20,4 +21,12 @@ Horn::Horn(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
 void Horn::moveHorn()
 {
     setPos(x()+10,y());
+
+    //destroy and delete horn if goes out of the scene
+    if (pos().x() - rect().width() > 800){
+        scene()->removeItem(this);
+        delete this;
+
+
+    }
 }

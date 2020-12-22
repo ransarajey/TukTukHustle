@@ -49,7 +49,7 @@ void Tuk::keyPressEvent(QKeyEvent *event){
     }
 
 
-    //spawn vehicles
+
 }
 
 void Tuk::spawnVehicles()
@@ -58,3 +58,5 @@ void Tuk::spawnVehicles()
     Vehicle * vehicle = new Vehicle();
     scene()->addItem(vehicle);
 }
+
+

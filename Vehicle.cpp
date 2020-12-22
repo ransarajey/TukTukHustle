@@ -5,6 +5,9 @@
 #include <Vehicle.h>
 #include <Game.h>
 
+#include <QDebug>
+
+
 Vehicle::Vehicle(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
 
     //create vehicle
@@ -29,4 +32,16 @@ void Vehicle::moveVehicle()
 {
     //move the vehicles towards tuk
     setPos(x()-5,y());
+
+    //destroy and delete vehicle if goes out of the screen
+    if (pos().x()+rect().width() < 0){
+
+        scene()->removeItem(this);
+        delete this;
+
+        qDebug() << "deleted";
+    }
 }
+
+
+
