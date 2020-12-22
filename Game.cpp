@@ -53,6 +53,9 @@ Game::Game(QWidget *parent){
     QObject::connect(timer,SIGNAL(timeout()),tuk,SLOT(spawnVehicles()));
     timer->start(2000);
 
+    //increase score
+    score->increaseScore();
+
     show();
 
 

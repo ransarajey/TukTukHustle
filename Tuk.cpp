@@ -4,9 +4,12 @@
 #include <Tuk.h>
 #include <Horn.h>
 #include <Vehicle.h>
+#include <Game.h>
 
 
+#include <QDebug>
 
+extern Game * game;
 
 Tuk::Tuk(QGraphicsItem *parent): QGraphicsRectItem(parent){
 
@@ -57,6 +60,14 @@ void Tuk::spawnVehicles()
     //create a vehicle
     Vehicle * vehicle = new Vehicle();
     scene()->addItem(vehicle);
+
+    qDebug() << "Added vehicle";
+    //increase score
+    game->score->increaseScore();
+
+
 }
+
+
 
 

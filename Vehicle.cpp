@@ -42,8 +42,6 @@ void Vehicle::moveVehicle()
         scene()->removeItem(this);
         delete this;
 
-        //increase score
-        game->score->increaseScore();
 
 
     }
