@@ -9,7 +9,7 @@ class Tuk:public QObject, public QGraphicsRectItem{
     Q_OBJECT
 public:
     Tuk(QGraphicsItem * parent=0);
-
+    void keyPressEvent(QKeyEvent * event);
 
 };
 

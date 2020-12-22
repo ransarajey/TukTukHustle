@@ -29,5 +29,9 @@ Game::Game(QWidget *parent){
     //add tuk to the scene
     scene->addItem(tuk);
 
+    //make the tuk focusable
+    tuk->setFlag(QGraphicsItem::ItemIsFocusable);
+    tuk->setFocus();
+
 
 };
