@@ -1,7 +1,11 @@
 #include <QTimer>
+#include <QList>
+#include <stdlib.h>
+#include <QGraphicsScene>
 
 #include <Horn.h>
 #include <Game.h>
+#include <Vehicle.h>
 
 
 
@@ -18,8 +22,27 @@ Horn::Horn(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
     timer->start(50);
 }
 
-void Horn::moveHorn()
-{
+void Horn::moveHorn(){
+
+    //getting a list of vehicles heard the honking
+    QList<QGraphicsItem *> heardHorn = collidingItems();
+
+    //if a vehicle heard the honking move it away
+    for (int i=0, n=heardHorn.size(); i<n; i++){
+        if (typeid(*(heardHorn[i])) == typeid(Vehicle)){
+
+            int randomNo = rand() % 2 ? 110: -110;
+
+            //move the vehicle
+            heardHorn[i]->setPos(x(),y()+randomNo);
+
+
+        }
+
+    }
+
+
+
     setPos(x()+10,y());
 
     //destroy and delete horn if goes out of the scene

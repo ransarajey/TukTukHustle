@@ -1,11 +1,11 @@
 #include <QGraphicsScene>
 #include <stdlib.h>
 #include <QTimer>
+#include <QList>
 
 #include <Vehicle.h>
+#include <Horn.h>
 #include <Game.h>
-
-#include <QDebug>
 
 
 Vehicle::Vehicle(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
@@ -14,7 +14,7 @@ Vehicle::Vehicle(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
     setRect(0,0,100,100);
 
     //set random position
-    int randomNo = rand() % 3 ? 100: 400;
+    int randomNo = rand() % 2 ? 100: 400;
 
     setPos(800,randomNo);
 
@@ -30,6 +30,8 @@ Vehicle::Vehicle(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent){
 
 void Vehicle::moveVehicle()
 {
+
+
     //move the vehicles towards tuk
     setPos(x()-5,y());
 
@@ -39,7 +41,7 @@ void Vehicle::moveVehicle()
         scene()->removeItem(this);
         delete this;
 
-        qDebug() << "deleted";
+
     }
 }
 
