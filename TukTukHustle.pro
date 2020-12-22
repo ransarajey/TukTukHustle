@@ -10,10 +10,12 @@ CONFIG += c++11
 
 SOURCES += \
     Game.cpp \
+    Tuk.cpp \
     main.cpp
 
 HEADERS += \
-    Game.h
+    Game.h \
+    Tuk.h
 
 FORMS +=
 
