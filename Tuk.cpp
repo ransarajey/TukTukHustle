@@ -22,9 +22,9 @@ Tuk::Tuk(QGraphicsItem *parent): QGraphicsPixmapItem(parent){
 
 void Tuk::keyPressEvent(QKeyEvent *event){
 
-    //move tuk with Arrow Keys
+    //move tuk with WASD Keys
     if (event->key() == Qt::Key_W){
-        if(pos().y()>0) //avoids tuk moving out of the scence
+        if(pos().y()>245) //avoids tuk moving out of the scence
         setPos(x(),y()-180);
 
 
@@ -32,8 +32,10 @@ void Tuk::keyPressEvent(QKeyEvent *event){
     }
 
     else if (event->key() == Qt::Key_S){
-        if(pos().y()+100<600) //avoids tuk moving out of the scence
+        if(pos().y()+100<425) //avoids tuk moving out of the scence
         setPos(x(),y()+180);
+
+
     }
 
     else if (event->key() == Qt::Key_A){
@@ -66,12 +68,16 @@ void Tuk::spawnVehicles()
     Vehicle * vehicle = new Vehicle();
     scene()->addItem(vehicle);
 
-    qDebug() << "Added vehicle";
+
     //increase score
     game->score->increaseScore();
 
 
+
+
 }
+
+
 
 
 

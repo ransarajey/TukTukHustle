@@ -7,6 +7,8 @@
 #include <Game.h>
 #include <Vehicle.h>
 
+#include <QDebug>
+
 extern Game * game;
 
 Horn::Horn(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
@@ -38,10 +40,10 @@ void Horn::moveHorn(){
     for (int i=0, n=heardHorn.size(); i<n; i++){
         if (typeid(*(heardHorn[i])) == typeid(Vehicle)){
 
-            int randomNo = rand() % 2 ? 110: -110;
+
 
             //move the vehicle
-            if(heardHorn[i]->pos().y() < 170){
+            if(heardHorn[i]->pos().y() < 200){
             heardHorn[i]->setPos(x(),y()+100);}
             else  {heardHorn[i]->setPos(x(),y()-245);}
 
@@ -55,7 +57,7 @@ void Horn::moveHorn(){
     setPos(x()+10,y());
 
     //destroy and delete horn if goes out of the scene
-    if (pos().x() - 100 > 800){
+    if (pos().x()+50 > 800){
         scene()->removeItem(this);
         delete this;
 

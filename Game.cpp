@@ -4,6 +4,8 @@
 #include <Vehicle.h>
 #include <QImage>
 
+#include <QDebug>
+
 
 Game::Game(QWidget *parent){
 
@@ -50,14 +52,19 @@ Game::Game(QWidget *parent){
     horncount->setPos(x(),y()+35);
     scene->addItem(horncount);
 
+
+
+
     //spwan vehicles
 
     QTimer * timer = new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),tuk,SLOT(spawnVehicles()));
-    timer->start(5000);
+    timer->start(2000);
 
     //increase score
     score->increaseScore();
+
+
 
     show();
 
@@ -67,13 +74,27 @@ Game::Game(QWidget *parent){
 
 }
 
+
+
 void Game::gameOver()
 {
+    //disable scene items
+    for (int i=0, n = scene->items().size(); i<n; i++){
+        scene->items()[i]->setEnabled(false);
+    }
+
+
+
     scenetwo = new QGraphicsScene();
     scenetwo->setSceneRect(0,0,800,600);
     setBackgroundBrush(QBrush(QImage(":/img/img/bg2.png")));
     setScene(scenetwo);
 
+    qDebug() << scene->items().size();
+    qDebug() << scenetwo->items().size();
 
 
-};
+
+}
+
+

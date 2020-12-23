@@ -6,7 +6,7 @@
 
 Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent) {
     //initialize score
-    score = 0;
+    score = -1;
 
     //draw text
     setPlainText(QString("Score: ") + QString::number(score)); //Score: 0
