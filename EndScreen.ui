@@ -30,7 +30,7 @@
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>190</y>
+      <y>250</y>
       <width>331</width>
       <height>111</height>
      </rect>
@@ -54,7 +54,7 @@
     <property name="geometry">
      <rect>
       <x>340</x>
-      <y>270</y>
+      <y>330</y>
       <width>101</width>
       <height>121</height>
      </rect>
@@ -81,7 +81,7 @@
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>390</y>
+      <y>450</y>
       <width>201</width>
       <height>81</height>
      </rect>
@@ -105,6 +105,30 @@ border-radius: 12px;
     </property>
     <property name="text">
      <string>Replay</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblTitle_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>200</y>
+      <width>511</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: red;</string>
+    </property>
+    <property name="text">
+     <string>Your tuk collided with a car!</string>
     </property>
    </widget>
   </widget>
