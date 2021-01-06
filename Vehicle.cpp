@@ -51,9 +51,13 @@ void Vehicle::moveVehicle()
     QList<QGraphicsItem *> collidedCars = collidingItems();
 
     //if a vehicle crashed with the tuk gameOver
-    for (int i=0, n=collidedCars.size(); i<n; i++){
-        if (typeid(*(collidedCars[i])) == typeid(Tuk)){
+    for (int i=0, n=collidedCars.size(); i<n ; i++){
+        if (typeid(*(collidedCars[i])) == typeid(Tuk)  && game->gameIsOver!=true){
+            game->timer->stop();
+            game->timer2->stop();
             game->gameOver();
+
+
         }
         }
 

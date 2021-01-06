@@ -9,6 +9,7 @@
         <file>img/tuk-px.png</file>
         <file>img/road-line.png</file>
         <file>img/homeScreen.png</file>
+        <file>img/endScreen.png</file>
     </qresource>
     <qresource prefix="/sfx">
         <file>sfx/tukhorn.wav</file>

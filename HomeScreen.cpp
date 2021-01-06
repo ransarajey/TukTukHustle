@@ -13,7 +13,7 @@ HomeScreen::HomeScreen(QWidget *parent)
 {
     ui->setupUi(this);
     QPixmap bkgnd(":/img/img/homeScreen.png");
-        bkgnd = bkgnd.scaled(800,612, Qt::IgnoreAspectRatio);
+        bkgnd = bkgnd.scaled(800,600, Qt::IgnoreAspectRatio);
         QPalette palette;
         palette.setBrush(QPalette::Background, bkgnd);
         this->setPalette(palette);

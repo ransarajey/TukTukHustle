@@ -3,14 +3,19 @@
 #include <Game.h>
 #include <Vehicle.h>
 #include <Road.h>
+#include <EndScreen.h>
 
 #include <QImage>
 
 
 #include <QDebug>
 
+EndScreen * endScreen;
 
 Game::Game(QWidget *parent){
+
+    timer = new QTimer(this);
+    timer2 = new QTimer(this);
 
     //creating a scene
     scene = new QGraphicsScene();
@@ -71,7 +76,7 @@ void Game::startGame()
 
      //spwan vehicles
 
-     QTimer * timer = new QTimer();
+
      QObject::connect(timer,SIGNAL(timeout()),tuk,SLOT(spawnVehicles()));
      timer->start(2000);
 
@@ -82,9 +87,11 @@ void Game::startGame()
 
      //spwan road
 
-     QTimer * timer2 = new QTimer();
+
      QObject::connect(timer2,SIGNAL(timeout()),tuk,SLOT(spawnRoad()));
      timer2->start(300);
+
+
 
 
 
@@ -98,10 +105,19 @@ void Game::gameOver()
     this->gameIsOver=true;
 
 
-    scenetwo = new QGraphicsScene();
-    scenetwo->setSceneRect(0,0,800,600);
-    setBackgroundBrush(QBrush(QImage(":/img/img/bg2.png")));
-    setScene(scenetwo);
+    this->close();
+    endScreen = new EndScreen();
+    endScreen->setWindowTitle("Tuk Tuk Hustle");
+    endScreen->setWindowIcon(QIcon(":/img/img/tuk.png"));
+    endScreen->show();
+
+    if(score->getScore()<10)  {
+        endScreen->ui->lblScore->setText(QString("0") + QString::number(score->getScore()));
+    }
+    else {
+        endScreen->ui->lblScore->setText(QString::number(score->getScore()));
+    }
+
 
 
 

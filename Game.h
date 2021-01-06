@@ -9,6 +9,8 @@
 #include <Score.h>
 #include <HornCount.h>
 
+#include <QTimer>
+
 
 class Game: public QGraphicsView{
 public:
@@ -16,6 +18,9 @@ public:
     void startGame();
     void gameOver();
     bool gameIsOver=false;
+    QTimer *timer;
+    QTimer *timer2;
+
 
 
      QGraphicsScene * scene;
