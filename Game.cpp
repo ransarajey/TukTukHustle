@@ -6,6 +6,7 @@
 
 #include <QImage>
 
+
 #include <QDebug>
 
 
@@ -28,6 +29,7 @@ Game::Game(QWidget *parent){
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setFixedSize(800,600);
+
 
 
     startGame();

@@ -3,18 +3,22 @@
 
 
 #include <Game.h>
+#include <HomeScreen.h>
+#include <HomeScreen.h>
 
-Game * game;
+//Game * game;
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    HomeScreen HomeScreen;
+    HomeScreen.setWindowTitle("TukTuk Hustle");
+    HomeScreen.setWindowIcon(QIcon(":/img/img/tuk.png"));
 
-    game = new Game();
-    game->setWindowTitle("Tuk Tuk Hustle");
-    game->setWindowIcon(QIcon(":/img/img/tuk.png"));
-    game->show();
+    HomeScreen.show();
+
+
 
 
     return a.exec();

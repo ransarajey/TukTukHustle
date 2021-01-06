@@ -17,7 +17,9 @@ SOURCES += \
     Score.cpp \
     Tuk.cpp \
     Vehicle.cpp \
-    main.cpp
+    main.cpp \
+    HomeScreen.cpp \
+    EndScreen.cpp
 
 HEADERS += \
     Game.h \
@@ -26,9 +28,13 @@ HEADERS += \
     Road.h \
     Score.h \
     Tuk.h \
-    Vehicle.h
+    Vehicle.h \
+    HomeScreen.h \
+    EndScreen.h
 
-FORMS +=
+FORMS += \
+    HomeScreen.ui \
+    EndScreen.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
