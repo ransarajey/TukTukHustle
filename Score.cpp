@@ -5,7 +5,7 @@
 
 
 Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent) {
-    //initialize score
+    //initialize score count
     score = -1;
 
     //draw text
@@ -16,6 +16,7 @@ Score::Score(QGraphicsItem *parent): QGraphicsTextItem(parent) {
 
 void Score::increaseScore()
 {
+    //increase score
     score++;
     setPlainText(QString("Score: ") + QString::number(score)); //Score: 0
 

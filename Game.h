@@ -18,11 +18,10 @@ public:
     void startGame();
     void gameOver();
     bool gameIsOver=false;
-    QTimer *timer;
-    QTimer *timer2;
+    QTimer *vehicleSpawnTimer;
+    QTimer *roadSpawnTimer;
 
-
-
+    //creating pointers
      QGraphicsScene * scene;
      QGraphicsScene * scenetwo;
      Tuk * tuk;

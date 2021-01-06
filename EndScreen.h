@@ -1,8 +1,6 @@
 #ifndef ENDSCREEN_H
 #define ENDSCREEN_H
 
-
-
 #include <QMainWindow>
 #include <ui_EndScreen.h>
 

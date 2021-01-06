@@ -5,7 +5,7 @@
 
 
 HornCount::HornCount(QGraphicsItem *parent): QGraphicsTextItem(parent) {
-    //initialize horns
+    //initialize horn count
     horns = 5;
 
     //draw text
@@ -16,6 +16,7 @@ HornCount::HornCount(QGraphicsItem *parent): QGraphicsTextItem(parent) {
 
 void HornCount::decreaseHorns()
 {
+    //decrease horns
     horns--;
     if(getHorns()>-1){
     setPlainText(QString("Horns: ") + QString::number(horns));} //Horns: 1
