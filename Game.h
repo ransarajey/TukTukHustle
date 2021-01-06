@@ -13,7 +13,9 @@
 class Game: public QGraphicsView{
 public:
     Game(QWidget * parent=0);
+    void startGame();
     void gameOver();
+    bool gameIsOver=false;
 
 
      QGraphicsScene * scene;

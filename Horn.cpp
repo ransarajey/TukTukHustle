@@ -18,6 +18,7 @@ Horn::Horn(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 //    setRect(0,0,50,100);
        setPixmap(QPixmap(":/img/img/horn.png"));
 
+
    }
 
     //decrease horn

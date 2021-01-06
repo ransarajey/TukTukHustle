@@ -7,5 +7,9 @@
         <file>img/bg.png</file>
         <file>img/bg2.png</file>
         <file>img/tuk-px.png</file>
+        <file>img/road-line.png</file>
+    </qresource>
+    <qresource prefix="/sfx">
+        <file>sfx/tukhorn.wav</file>
     </qresource>
 </RCC>

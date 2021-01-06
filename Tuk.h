@@ -4,6 +4,7 @@
 #include <QGraphicsPixmapItem>
 #include <QObject>
 #include <QGraphicsItem>
+#include <QMediaPlayer>
 
 class Tuk:public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
@@ -13,6 +14,10 @@ public:
 
 public slots:
     void spawnVehicles();
+    void spawnRoad();
+
+private:
+    QMediaPlayer * tukhornsound;
 
 };
 

@@ -6,6 +6,7 @@
 #include <Horn.h>
 #include <Vehicle.h>
 #include <Game.h>
+#include <Road.h>
 
 
 #include <QDebug>
@@ -15,6 +16,8 @@ extern Game * game;
 Tuk::Tuk(QGraphicsItem *parent): QGraphicsPixmapItem(parent){
 
     setPixmap(QPixmap(":/img/img/tuk.png"));
+
+    tukhornsound = new QMediaPlayer();
 
 
 }
@@ -51,10 +54,25 @@ void Tuk::keyPressEvent(QKeyEvent *event){
     //honk with spacebar
 
     else if(event->key() == Qt::Key_Space){
+
+        if(game->horncount->getHorns()>0){
         //create a horn
         Horn * horn = new Horn();
         horn->setPos(x()+80,y());
         scene()->addItem(horn);
+
+        //play horn sound
+
+
+        if( tukhornsound->state() == QMediaPlayer::StoppedState) {
+              tukhornsound->setMedia(QUrl("qrc:/sfx/sfx/tukhorn.wav"));
+            }
+            tukhornsound->setPosition(0);
+            tukhornsound->play();
+
+        }
+
+
     }
 
 
@@ -73,6 +91,15 @@ void Tuk::spawnVehicles()
     game->score->increaseScore();
 
 
+
+
+}
+
+void Tuk::spawnRoad()
+{
+    //create a vehicle
+    Road * road = new Road();
+    scene()->addItem(road);
 
 
 }

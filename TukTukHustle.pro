@@ -1,4 +1,5 @@
-QT       += core gui
+QT       += core gui \
+            multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,6 +13,7 @@ SOURCES += \
     Game.cpp \
     Horn.cpp \
     HornCount.cpp \
+    Road.cpp \
     Score.cpp \
     Tuk.cpp \
     Vehicle.cpp \
@@ -21,6 +23,7 @@ HEADERS += \
     Game.h \
     Horn.h \
     HornCount.h \
+    Road.h \
     Score.h \
     Tuk.h \
     Vehicle.h
