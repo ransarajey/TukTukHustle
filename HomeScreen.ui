@@ -71,7 +71,7 @@ border-radius: 12px;
      <string>Start</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="StartGame_2">
+   <widget class="QPushButton" name="instructions">
     <property name="enabled">
      <bool>true</bool>
     </property>

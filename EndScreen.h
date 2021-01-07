@@ -18,7 +18,7 @@ public:
      Ui::EndScreen *ui;
 
 private slots:
-    void on_StartGame_clicked();
+    void on_ReplayGame_clicked();
 
 private:
 //    Ui::EndScreen *ui;

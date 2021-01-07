@@ -37,8 +37,7 @@ void HomeScreen::on_StartGame_clicked()
     game->show();
 }
 
-
-void HomeScreen::on_StartGame_2_clicked()
+void HomeScreen::on_instructions_clicked()
 {
     //if user clicks the how to play button display instructions
     QString aboutText;
@@ -46,5 +45,5 @@ void HomeScreen::on_StartGame_2_clicked()
     aboutText += "02: Use horns(space) to move the traffic from your way.";
 
     QMessageBox::about(this,"How to play?", aboutText);
-
 }
+

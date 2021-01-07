@@ -18,7 +18,7 @@ public:
 private slots:
     void on_StartGame_clicked();
 
-    void on_StartGame_2_clicked();
+    void on_instructions_clicked();
 
 private:
     Ui::HomeScreen *ui;

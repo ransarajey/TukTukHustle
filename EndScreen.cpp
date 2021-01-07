@@ -27,8 +27,7 @@ EndScreen::~EndScreen()
     delete ui;
 }
 
-
-void EndScreen::on_StartGame_clicked()
+void EndScreen::on_ReplayGame_clicked()
 {
     //when the user clicks the replay button, current window will get closed & the game window will open
     this->close();
